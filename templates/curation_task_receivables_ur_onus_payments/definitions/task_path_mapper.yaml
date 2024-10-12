@@ -1,0 +1,7 @@
+__paths__:
+  _{{ cookiecutter.reference_table_concat_path }}: &{{ cookiecutter.reference_table_concat_path }} "{{ cookiecutter.reference_table_path }}"
+
+{{ cookiecutter.reference_table }}_{{ cookiecutter.reference_table_process }}:
+  dag_id: {{ cookiecutter.dag_id }}
+  task_id: {{ cookiecutter.reference_table }}
+  data_path: !concat [*{{ cookiecutter.reference_table_concat_path }}, {{ cookiecutter.reference_table }}]

@@ -1,0 +1,23 @@
+{
+    "process_name":                "curation",
+    "services_root":               "services",
+    "airflow_root":                "airflow",
+    "spark_task_root":             "spark-tasks",
+    "config_root":                 "config",
+    "pipeline_config_root":        "pipeline_config",
+    "databricks_notebooks_root":   "databricks-notebooks",
+    "metadata_root":               "metadata",
+    "schema":                      "finance",
+    "table_name":                  "receivables_ur_onus_payments",
+    "external_dependencies":       {"1":"receivables_ur_onus_payments"},
+    "instance":                    "mysql",
+    "jira_task_id":                {"1":"FTOA-384"},
+    "slack_user":                  {"1":"Felipe Drechsler"},
+    "last_update":                 "23/08/2021",
+    "reference_table":             "receivables_ur_onus_payments",
+    "reference_table_process":     "cleaned",
+    "reference_table_path":        "s3://{% raw %}{{ picpay_datalake_cleaned }}{% endraw %}/mysql/mysql_receivables/receivables/",
+    "dag_id":                      "mysql_cleaning",
+    "reference_table_concat_path": "mysql_receivables_clean_path",
+    "metadata_definition":         ""
+}

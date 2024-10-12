@@ -1,0 +1,16 @@
+__folders__:
+  skeleton:
+    cookiecutter.json: "definitions/cookiecutter.json"
+    "{{ cookiecutter.services_root }}":
+      "{{ cookiecutter.airflow_root }}":
+        "{{ cookiecutter.config_root }}":
+          "{{ cookiecutter.pipeline_config_root }}":
+            - curation_tasks.yaml:   "definitions/curation_tasks.yaml"
+            - task_path_mapper.yaml: "definitions/task_path_mapper.yaml"
+        "{{ cookiecutter.databricks_notebooks_root }}":
+          "{{ cookiecutter.process_name }}":
+            "{{ cookiecutter.schema }}":
+              - "{{ cookiecutter.table_name }}.py": "definitions/curation_definition.py"
+        "{{ cookiecutter.metadata_root }}":
+            "{{ cookiecutter.schema }}":
+              - "{{ cookiecutter.table_name }}.yml": "definitions/metadata_definition.yaml"
